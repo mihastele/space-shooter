@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c232652a05bef1445b7d9aea6c7d2112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 120
+  health: 20
+  hitEffect: {fileID: 599856506969460013, guid: 3431b8f09e61f3d4b8b3d1f7b1eb4689, type: 3}
 --- !u!114 &-6967875406839620256
 MonoBehaviour:
   m_ObjectHideFlags: 0

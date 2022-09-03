@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    [Header("General")]
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileLifetime = 5f;
     [SerializeField] float baseFiringRate = 0.2f;
+
+    [Header("AI")]
     [SerializeField] float firingRateVariance = 0f;
     [SerializeField] float minimumFireRate = 0.2f;
     [SerializeField] bool useAI;
 
     Coroutine firingCoroutine;
 
-    public bool isFiring;
+    [HideInInspector] public bool isFiring;
 
     // Start is called before the first frame update
     void Start()
