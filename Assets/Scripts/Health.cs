@@ -12,9 +12,12 @@ public class Health : MonoBehaviour
 
     CameraShake cameraShake;
 
+    AudioPlayer audioPlayer;
+
     void Awake()
     {
         cameraShake = Camera.main.GetComponent<CameraShake>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -25,6 +28,7 @@ public class Health : MonoBehaviour
         {
 
             TakeDamage(damageDealer.GetDamage());
+            audioPlayer.PlayDamageClip();
             PlayHitEffect();
             ShakeCamera();
             damageDealer.Hit();
