@@ -18,7 +18,6 @@ public class Health : MonoBehaviour
 
     AudioPlayer audioPlayer;
 
-    ScoreKeeper scoreKeeper;
 
     LevelManager levelManager;
 
@@ -31,7 +30,6 @@ public class Health : MonoBehaviour
     {
         cameraShake = Camera.main.GetComponent<CameraShake>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
-        scoreKeeper = FindObjectOfType<ScoreKeeper>();
         levelManager = FindObjectOfType<LevelManager>();
     }
 
@@ -65,7 +63,7 @@ public class Health : MonoBehaviour
 
         if (!isPlayer)
         {
-            scoreKeeper.ModifyScore(score);
+            ScoreKeeper.GetInstance().ModifyScore(score);
         }
         else
         {
