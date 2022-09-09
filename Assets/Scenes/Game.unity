@@ -424,9 +424,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveConfigs:
   - {fileID: 11400000, guid: 307ae51616de23042bad1d8d578a8fe7, type: 2}
+  - {fileID: 11400000, guid: 12ccabd5b12048449b176ad8856f0227, type: 2}
+  - {fileID: 11400000, guid: 579b0353ead31714b8489c60ff2edac9, type: 2}
+  - {fileID: 11400000, guid: c25d248fa1a9b2c4387503cc2b8d5c7d, type: 2}
+  - {fileID: 11400000, guid: 295d9060a05f05f408c7f26b56f40762, type: 2}
   - {fileID: 11400000, guid: 99173f95d5decea448f7e508406b3e23, type: 2}
+  - {fileID: 11400000, guid: eeebd4ff550146f439764be92629b979, type: 2}
+  - {fileID: 11400000, guid: 8ab44d73a1eba6d409654dcd226a9ffb, type: 2}
+  - {fileID: 11400000, guid: 844aa9ae99fdc2942979db95ebbdbe60, type: 2}
+  - {fileID: 11400000, guid: 5d004510f9425bd40a78d091aa3ec0f7, type: 2}
+  - {fileID: 11400000, guid: 2339fa836535cec46b0d008b60f579ff, type: 2}
+  - {fileID: 11400000, guid: dc53351fa0ecf0048b5f6840425c25d0, type: 2}
+  - {fileID: 11400000, guid: 5b30fd09f3da72d458b0c340bbac3649, type: 2}
+  - {fileID: 11400000, guid: d2768fc1b83e16b4ca3b1bd012e73538, type: 2}
+  - {fileID: 11400000, guid: 118bc70e8daa36a47b7e6abb29555c45, type: 2}
+  meteorWaveConfigs:
+  - {fileID: 11400000, guid: 29a576bc79dbdf9479f58825960c2cee, type: 2}
   timeBetweenWaves: 0.3
   currentWave: {fileID: 11400000, guid: 307ae51616de23042bad1d8d578a8fe7, type: 2}
+  currentMeteorWave: {fileID: 11400000, guid: 29a576bc79dbdf9479f58825960c2cee, type: 2}
   isLooping: 1
 --- !u!4 &1960402362
 Transform:
