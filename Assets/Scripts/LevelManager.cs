@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
         // Debug.Log(scoreKeeper);
         // if (scoreKeeper)
         // {
-        Debug.Log(ScoreKeeper.GetInstance());
+        // Debug.Log(ScoreKeeper.GetInstance());
         ScoreKeeper.GetInstance().ResetScore();
         // }
         // string reference to the scene object (Via the Name)

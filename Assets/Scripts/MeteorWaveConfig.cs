@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Meteor Wave config", fileName = "Meteor Wave Config")]
-public class MeteorWaveConfig : ScriptableObject
+public class MeteorWaveConfig : ScriptableObject, IWave
 {
 
     [SerializeField] List<GameObject> enemyPrefabs;
@@ -43,7 +43,7 @@ public class MeteorWaveConfig : ScriptableObject
         return RandomBound;
     }
 
-    public GameObject GetEnemyPrefab(int index)
+    public GameObject GetRandomEnemyPrefab()
     {
         return enemyPrefabs[Random.Range(0, enemyPrefabs.Count - 1)];
     }
@@ -52,5 +52,10 @@ public class MeteorWaveConfig : ScriptableObject
     {
         float spawnTime = Random.Range(timeBetweenSpans - spawnTimeVariance, timeBetweenSpans + spawnTimeVariance);
         return Mathf.Clamp(spawnTime, minimumSpawnTime, float.MaxValue);
+    }
+
+    public int GetTypeOFWave()
+    {
+        return 1;
     }
 }

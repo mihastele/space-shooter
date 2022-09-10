@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Wave config", fileName = "New Wave Config")]
-public class WaveConfigSO : ScriptableObject
+public class WaveConfigSO : ScriptableObject, IWave
 {
 
     [SerializeField] List<GameObject> enemyPrefabs;
@@ -50,5 +50,10 @@ public class WaveConfigSO : ScriptableObject
     {
         float spawnTime = Random.Range(timeBetweenSpans - spawnTimeVariance, timeBetweenSpans + spawnTimeVariance);
         return Mathf.Clamp(spawnTime, minimumSpawnTime, float.MaxValue);
+    }
+
+    public int GetTypeOFWave()
+    {
+        return 0;
     }
 }

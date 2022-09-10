@@ -440,9 +440,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 118bc70e8daa36a47b7e6abb29555c45, type: 2}
   meteorWaveConfigs:
   - {fileID: 11400000, guid: 29a576bc79dbdf9479f58825960c2cee, type: 2}
+  - {fileID: 11400000, guid: b55796735d4963c46b239ca2b2a4ee7e, type: 2}
+  - {fileID: 11400000, guid: 8f6bf87a52e5fd74ca379c3d7c13aee2, type: 2}
+  - {fileID: 11400000, guid: f5a83fa3b9e5b8148858af1975949ad7, type: 2}
   timeBetweenWaves: 0.3
   currentWave: {fileID: 11400000, guid: 307ae51616de23042bad1d8d578a8fe7, type: 2}
-  currentMeteorWave: {fileID: 11400000, guid: 29a576bc79dbdf9479f58825960c2cee, type: 2}
+  currentMeteorWave: {fileID: 11400000, guid: f5a83fa3b9e5b8148858af1975949ad7, type: 2}
   isLooping: 1
 --- !u!4 &1960402362
 Transform:

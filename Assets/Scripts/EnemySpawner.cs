@@ -7,7 +7,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] List<WaveConfigSO> waveConfigs;
 
     [SerializeField] List<MeteorWaveConfig> meteorWaveConfigs;
-    [SerializeField] float timeBetweenWaves = 5f;
+    [SerializeField] float timeBetweenWaves = 3f;
+
+    [SerializeField] float timeBetweenMeteorWaves = 7f;
     [SerializeField] WaveConfigSO currentWave;
 
     [SerializeField] MeteorWaveConfig currentMeteorWave;
@@ -19,10 +21,23 @@ public class EnemySpawner : MonoBehaviour
 
 
     }
+    IEnumerator DelayFirstRun()
+    {
+
+        yield return new WaitForSeconds(3 + Random.Range(2, 5));
+        Debug.Log("Meteor time");
+        StartCoroutine(SpawnEnemyMeteorWaves());
+
+    }
 
     public WaveConfigSO GetCurrentWave()
     {
         return currentWave;
+    }
+
+    public MeteorWaveConfig GetCurrentMeteorWave()
+    {
+        return currentMeteorWave;
     }
 
     IEnumerator SpawnEnemyWaves()
@@ -60,13 +75,7 @@ public class EnemySpawner : MonoBehaviour
         } while (isLooping);
     }
 
-    IEnumerator DelayFirstRun()
-    {
 
-        yield return new WaitForSeconds(3 + Random.Range(2, 5));
-        StartCoroutine(SpawnEnemyMeteorWaves());
-
-    }
     IEnumerator SpawnEnemyMeteorWaves()
     {
 
@@ -75,15 +84,15 @@ public class EnemySpawner : MonoBehaviour
             int idx = Random.Range(0, meteorWaveConfigs.Count - 1);
 
             currentMeteorWave = meteorWaveConfigs[idx];
-            for (int i = 0; i < currentWave.getEnemyCount(); i++)
+            for (int i = 0; i < currentMeteorWave.getEnemyCount(); i++)
             {
-                Instantiate(currentWave.GetEnemyPrefab(i),
+                Instantiate(currentMeteorWave.GetRandomEnemyPrefab(),
                 currentMeteorWave.GetStartingWayPoint().position,
                 Quaternion.identity, transform);
                 yield return new WaitForSeconds(currentMeteorWave.GetRandomSpawnTime());
             }
 
-            yield return new WaitForSeconds(timeBetweenWaves);
+            yield return new WaitForSeconds(timeBetweenMeteorWaves);
         } while (isLooping);
     }
 }

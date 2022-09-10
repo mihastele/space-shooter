@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 641240127230167004}
-  - component: {fileID: 6272412948492647957}
   - component: {fileID: 6099158697931050443}
   - component: {fileID: -2771946712560006137}
   - component: {fileID: 7688812935797212488}
   - component: {fileID: -6967875406839620256}
   - component: {fileID: -3523193545342129152}
   - component: {fileID: 2641041240284733192}
+  - component: {fileID: 151257741749715455}
   m_Layer: 7
   m_Name: enemy meteor
   m_TagString: Untagged
@@ -39,18 +39,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6272412948492647957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641240127230166979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8eafa0dc849222418fb6755c8a73b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &6099158697931050443
 Rigidbody2D:
   serializedVersion: 4
@@ -150,7 +138,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b979d1c411d843d408589936135334a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roationSpeed: 1
+  _rotation: {x: 0, y: 0, z: 1}
+  _speed: 40
+--- !u!114 &151257741749715455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641240127230166979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0f55a3c2eb4a2488c41529920e425a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &641240128204337011
 GameObject:
   m_ObjectHideFlags: 0
