@@ -83,7 +83,7 @@ MonoBehaviour:
   paddingLeft: 0.5
   paddingRight: 0.5
   paddingTop: 5
-  paddingBottom: 0.5
+  paddingBottom: 3.4
 --- !u!50 &898991622935556136
 Rigidbody2D:
   serializedVersion: 4

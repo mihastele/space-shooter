@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     Vector2 rawInput;
 
+    public Joystick joystick;
+
     // SErializeFields are editable in Unity :)
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float paddingLeft;
@@ -47,6 +49,13 @@ public class Player : MonoBehaviour
     {
         // Time.deltaTime for framerate independent.
         Vector3 delta = rawInput * moveSpeed * Time.deltaTime;
+        Vector3 deltaJoystick = joystick.Direction * moveSpeed * Time.deltaTime;
+
+        if (Mathf.Abs(deltaJoystick.x + deltaJoystick.y) > Mathf.Abs(delta.x + delta.y))
+        {
+            delta = deltaJoystick;
+        }
+
         Vector2 newPos = new Vector2();
         // if(newPos.x + delta.x > maxBounds.x )
         newPos.x = Mathf.Clamp(transform.position.x + delta.x, minBounds.x + paddingLeft, maxBounds.x - paddingRight);
@@ -69,5 +78,15 @@ public class Player : MonoBehaviour
         {
             shooter.isFiring = value.isPressed;
         }
+    }
+
+    public void Fire()
+    {
+        shooter.isFiring = true;
+    }
+
+    public void StopFire()
+    {
+        shooter.isFiring = false;
     }
 }
