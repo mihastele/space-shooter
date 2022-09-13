@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] float sceneLoadDelay = 2f;
-    [SerializeField] public static int lives = 0;
+    [SerializeField] public static int lives = 1;
 
 
     public void LoadGame()
