@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] float sceneLoadDelay = 2f;
+    [SerializeField] public static int lives = 0;
 
 
     public void LoadGame()
@@ -15,10 +16,35 @@ public class LevelManager : MonoBehaviour
         // if (scoreKeeper)
         // {
         // Debug.Log(ScoreKeeper.GetInstance());
-        ScoreKeeper.GetInstance().ResetScore();
+        // ScoreKeeper.GetInstance().ResetScore();
         // }
         // string reference to the scene object (Via the Name)
-        SceneManager.LoadScene("Game");
+        // SceneManager.LoadScene("Game");
+
+        if (lives > 0)
+        {
+            ScoreKeeper.GetInstance().ResetScore();
+            SceneManager.LoadScene("Game");
+        }
+        else
+        {
+            LoadAdScreen();
+        }
+    }
+
+    public void ShowAd()
+    {
+        AdManager.Instance.ShowAd();
+    }
+
+    public void LoadAdScreen()
+    {
+        SceneManager.LoadScene("LivesScreen");
+    }
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadScene("Credits");
     }
 
     public void LoadMainMenu()
@@ -28,6 +54,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadGameOver()
     {
+        LevelManager.lives -= 1;
         StartCoroutine(WaitAndLoad("GameOver", sceneLoadDelay));
     }
 

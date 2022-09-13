@@ -12,6 +12,7 @@ public class UIDisplay : MonoBehaviour
 
     [Header("Score")]
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI livesLeftText;
 
 
 
@@ -24,5 +25,6 @@ public class UIDisplay : MonoBehaviour
     {
         healthSlider.value = playerHealth.GetHealth();
         scoreText.text = ScoreKeeper.GetInstance().GetScore().ToString();
+        livesLeftText.text = $"{LevelManager.lives} Lives Left";
     }
 }
