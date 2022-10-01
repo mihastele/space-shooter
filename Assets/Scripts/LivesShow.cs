@@ -15,11 +15,11 @@ public class LivesShow : MonoBehaviour
 
     void Update()
     {
-        RefreshLives();
+        // RefreshLives();
     }
 
     public void RefreshLives()
     {
-        livesText.text = $"Lives Left:\n{LevelManager.lives.ToString()}";
+        // livesText.text = $"Lives Left:\n{LevelManager.lives.ToString()}";
     }
 }

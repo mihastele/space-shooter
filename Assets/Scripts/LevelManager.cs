@@ -21,15 +21,9 @@ public class LevelManager : MonoBehaviour
         // string reference to the scene object (Via the Name)
         // SceneManager.LoadScene("Game");
 
-        if (lives > 0)
-        {
-            ScoreKeeper.GetInstance().ResetScore();
-            SceneManager.LoadScene("Game");
-        }
-        else
-        {
-            LoadAdScreen();
-        }
+        ScoreKeeper.GetInstance().ResetScore();
+        SceneManager.LoadScene("Game");
+
     }
 
     public void ShowAd()
