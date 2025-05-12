@@ -5,3 +5,7 @@ Ideas:
 - enemy space ships (moving, shooting, special effects)
 - meteors (flying down the canvas, damaging player)
 - Bosses :P
+
+
+Currently hosting on:
+https://mihastele.github.io/spaceshooter.html
